@@ -3,10 +3,10 @@ const express = require('express');
 const horizon = require('@horizon/server');
 const path = require('path');
 const app = express();
-app.use(express.static('dist'));
+app.use(express.static('./'));
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const httpServer = app.listen(8081, function(err) {
