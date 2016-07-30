@@ -1,6 +1,10 @@
+sudo: required
+
 language: node_js
+
 services:
-- docker
+  - docker
+
 env:
   global:
   - DOCKER_IMAGE_NAME=hefesoft/horizon
