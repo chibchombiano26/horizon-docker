@@ -1,8 +1,8 @@
 language: node_js
-node_js:
-- '5'
+services:
+- docker
 env:
-  global:   
+  global:
   - DOCKER_IMAGE_NAME=hefesoft/horizon
   - COMMIT=${TRAVIS_COMMIT::8}
   - secure: JTgO3WokC8ShbfPe7w5jy7Ja0LGjPZDE5kXcIrG6HBhgiMaZQIETlN49CF2PT9fSwho61eBBwO+gaoF31vUmKbElmunmQv0KQFmNL1kRWLHDnVsseDVXmVOA35/vdMc/Itqh16vkNBOwdgY54yP8IL1CE8TYKo2kDAM7wLLEg3widT8soJofKShNgmfLURzMhoLgqxi9zS+0tZ33CgBD5u5EbhfWgT9uTQ7vQCKJ74JgJ835oQ2veO8Tp2V4eZKYZSPLwSoj/C2UgqH92a3lA0kbyEdkKY6rM9QCa7LGkYZkclAKZVDURRGd/d5YdCA65IH1Ceq//GBsn5cuUfFvQTatzt/k9hRjCGCoUGBk5DpqAG43rM+tB1yGnzYEhSd2p6uFv3v1VrepGJ/OgVN5Vc2kNAN/o1hwi0z964rLY5ZE536svWbmpT6s7ccO+jgzEdzyV8iuQhmQZbFIE8+wDhlcgta5LPWmik5kg1cf3OJibkUgerctpsX95c+PUoKUQHY0Rdi6y3GNlKwMXa9fSm4tTJO/RBFdH27HCv/yloc/4g5JojAmZdRPk/ejwqix/gTndxMvXsx+jbtIAtYZYa9ptGcnzG0WhsCbB/TisyCCIIeal3N/pxk8+lj4WdIPTwzYiCPQY7eG9rVfe2CPr5UEaB5S+QN1m320puDBAD4=
