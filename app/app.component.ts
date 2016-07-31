@@ -6,7 +6,9 @@ import * as moment from  "moment";
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My Angular</h1>'    
+    template: `<div class="container-fluid">
+        <p> <button type="button" (click)="click()" class="btn btn-primary">Click to insert</button> </p>
+     </div>`    
 })
 
 export class AppComponent implements OnInit {
@@ -15,15 +17,19 @@ export class AppComponent implements OnInit {
       
     }
 
-    ngOnInit() {
-
-     let messages = this.horizon("messages");
+    click(){
+      let messages = this.horizon("messages");
 
       messages.store({
         sender: "Bob",
         time: new Date(),
         text: "Hello, World!"
       });
+    }
+
+    ngOnInit() {
+
+     let messages = this.horizon("messages");
 
     /*messages.findAll({sender: "Bob"}).fetch()
               .subscribe(m => console.log(m));

@@ -16,13 +16,16 @@ var AppComponent = (function () {
     function AppComponent(horizon) {
         this.horizon = horizon;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    AppComponent.prototype.click = function () {
         var messages = this.horizon("messages");
         messages.store({
             sender: "Bob",
             time: new Date(),
             text: "Hello, World!"
         });
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        var messages = this.horizon("messages");
         /*messages.findAll({sender: "Bob"}).fetch()
                   .subscribe(m => console.log(m));
         */
@@ -32,7 +35,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>My Angular</h1>'
+            template: "<div class=\"container-fluid\">\n        <p> <button type=\"button\" (click)=\"click()\" class=\"btn btn-primary\">Click to insert</button> </p>\n     </div>"
         }),
         __param(0, core_1.Inject("horizon")), 
         __metadata('design:paramtypes', [Object])
