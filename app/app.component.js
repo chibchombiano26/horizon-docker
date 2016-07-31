@@ -12,9 +12,12 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = require('@angular/core');
+var _ = require("lodash");
 var AppComponent = (function () {
     function AppComponent(horizon) {
         this.horizon = horizon;
+        debugger;
+        var a = _;
     }
     AppComponent.prototype.click = function () {
         var messages = this.horizon("messages");
