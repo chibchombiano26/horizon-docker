@@ -1,26 +1,3 @@
-<!--<!doctype html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <script src="/horizon/horizon.js"></script>
-    <script>
-        var horizon = Horizon();
-        horizon.onReady(function() {
-            document.querySelector('h1').innerHTML = 'Horizon With Docker Test!'
-        });
-        horizon.connect();
-    </script>
-</head>
-
-<body>
-    <marquee>
-        <h1></h1></marquee>
-</body>
-
-</html>-->
-
-
 <html>
   <head>
     <title>Angular 2 QuickStart</title>
@@ -36,18 +13,16 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
-
-    <script>
+    <script>        
         var horizon = Horizon();
         horizon.onReady(function() {
-            console.log("Horizons ready");
+            System.import('../app').then(function(m){
+                m.RunApplication(horizon);
+            }).catch(function(err){ console.error(err); });
         });
         horizon.connect();
-    </script>
-
-    <script>
-      System.import('../app').catch(function(err){ console.error(err); });
-    </script>
+    </script>      
+    
   </head>
   <!-- 3. Display the application -->
   <body>
