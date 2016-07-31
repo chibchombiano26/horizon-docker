@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {CORE_DIRECTIVES} from '@angular/common'
+import * as _ from "lodash";
+import * as moment from  "moment";
 
 
 @Component({
@@ -9,7 +11,7 @@ import {CORE_DIRECTIVES} from '@angular/common'
 
 export class AppComponent implements OnInit {
 
-  constructor(@Inject("horizon") private horizon: any) {      
+    constructor(@Inject("horizon") private horizon: any) {      
       
     }
 
@@ -26,7 +28,7 @@ export class AppComponent implements OnInit {
     /*messages.findAll({sender: "Bob"}).fetch()
               .subscribe(m => console.log(m));
     */
-      
+
       messages.limit(5).watch()
      .subscribe(items => console.log(items))
 
