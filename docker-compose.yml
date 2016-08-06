@@ -12,11 +12,11 @@ services:
     RDB_PORT: 28015
     PROJECT_NAME: Hefesoft
     TOKEN_SECRET: Hefesoft123
-    ALLOW_ANONYMOUS: true
-    ALLOW_UNAUTHENTICATED : true
-    CREATE_COLLECTION : true
-    CREATE_INDEX : true
-    PERMISSION : true
+    ALLOW_ANONYMOUS: 1
+    ALLOW_UNAUTHENTICATED : 1
+    CREATE_COLLECTION : 1
+    CREATE_INDEX : 1
+    PERMISSION : 0
    depends_on:
      - db
    ports:

@@ -24,23 +24,23 @@ let allow_anonymous = true;
 let allow_unauthenticated = true;
 
 if(process.env.CREATE_COLLECTION){
-    autoCreateCollection = process.env.CREATE_COLLECTION;
+    autoCreateCollection = Boolean(process.env.CREATE_COLLECTION);
 }
 
 if(process.env.CREATE_INDEX){
-    auto_create_index = process.env.CREATE_INDEX;
+    auto_create_index = Boolean(process.env.CREATE_INDEX);
 }
 
 if(process.env.PERMISSION){
-    permission = process.env.PERMISSION;
+    permission = Boolean(process.env.PERMISSION);
 }
 
 if(process.env.ALLOW_ANONYMOUS){
-    allow_anonymous = process.env.ALLOW_ANONYMOUS;
+    allow_anonymous = Boolean(process.env.ALLOW_ANONYMOUS);
 }
 
 if(process.env.ALLOW_UNAUTHENTICATED){
-    allow_unauthenticated = process.env.ALLOW_UNAUTHENTICATED;
+    allow_unauthenticated = Boolean(process.env.ALLOW_UNAUTHENTICATED);
 }
 
 const horizonServer = horizon(httpServer, {
