@@ -10,6 +10,13 @@ services:
    environment:
     RDB_HOST: db
     RDB_PORT: 28015
+    PROJECT_NAME: Hefesoft
+    TOKEN_SECRET: Hefesoft123
+    ALLOW_ANONYMOUS: true
+    ALLOW_UNAUTHENTICATED : true
+    CREATE_COLLECTION : true
+    CREATE_INDEX : true
+    PERMISSION : true
    depends_on:
      - db
    ports:
