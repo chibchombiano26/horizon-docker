@@ -56,3 +56,5 @@ const horizonServer = horizon(httpServer, {
         token_secret: process.env.TOKEN_SECRET || 'HorizonWithDockerIsSecret'
     }
 });
+
+console.log(horizonServer);
