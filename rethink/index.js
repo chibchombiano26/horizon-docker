@@ -4,6 +4,8 @@ var connection = "";
 var dataFactory = {};
 
   dataFactory.connect = function() {
+    console.log("Ports", process.env.RDB_HOST, process.env.RDB_PORT);
+    
     return new Promise(function (resolve, reject){
         r.connect({
             db: process.env.PROJECT_NAME || 'HorizonWithDocker',
