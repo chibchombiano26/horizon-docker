@@ -17,6 +17,7 @@ app.get('*', function(req, res) {
 });
 
 app.post('*', function(req, res) {
+    console.log(req.body, JSON.stringify(req));
     retinkdb.insert(req.body).then(function(result){
          res.sendStatus(200);
     })
