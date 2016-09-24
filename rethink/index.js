@@ -20,13 +20,9 @@ var dataFactory = {};
   dataFactory.insert = function(data) {
     
     return new Promise(function (resolve, reject){
-        dataFactory.connect().then(function(conn){
-
-            r.table("posts").insert(data).run(conn, function(result){
-                console.log(result);
-                resolve(result);
-            })
-
+        r.table("posts").insert(data).run(connection, function(result){
+            console.log(result);
+            resolve(result);
         })        
     });
     

@@ -4,10 +4,12 @@ const horizon = require('@horizon/server');
 const path = require('path');
 var bodyParser = require('body-parser');
 const app = express();
-const retinkdb = require("./rethink/index");
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+const retinkdb = require("./rethink/index");
+retinkdb.connect();
+
 app.use(express.static('./'));
 
 app.get('*', function(req, res) {
