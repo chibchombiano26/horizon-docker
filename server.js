@@ -2,11 +2,24 @@
 const express = require('express');
 const horizon = require('@horizon/server');
 const path = require('path');
+var bodyParser = require('body-parser');
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+const retinkdb = require("./rethink/index");
+retinkdb.connect();
+
 app.use(express.static('./'));
 
 app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.post('*', function(req, res) {
+    retinkdb.insert(req.body).then(function(result){
+         res.sendStatus(200);
+    })
 });
 
 const httpServer = app.listen(8081, function(err) {
